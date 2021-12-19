@@ -16,7 +16,7 @@ if ! docker network list | grep macvlan ; then \
     -o parent=eth0 macvlan1
 fi
 
-# Step 3: Create and start docker container it not already present
+# Step 3: Create and start docker container if not already present
 if ! docker ps | grep timemachine ; then \
   docker run -d --restart=always \
     --name timemachine \
